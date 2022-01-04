@@ -4,7 +4,7 @@ import { Context } from '../context/BlogContext';
 import { Feather } from '@expo/vector-icons';
 
 export default function IndexScreens({ navigation }) {
-	const { state, addBlog, deleteBlog } = useContext(Context);
+	const { state, deleteBlog } = useContext(Context);
 	React.useLayoutEffect(() => {
 		navigation.setOptions({
 			headerRight: () => (
@@ -16,8 +16,7 @@ export default function IndexScreens({ navigation }) {
 	}, [navigation]);
 	return (
 		<View>
-			{console.log('3')}
-			<Button onPress={() => addBlog()} title='Add Blog' />
+			{/* <Button onPress={() => addBlog()} title='Add Blog' /> */}
 			<FlatList
 				data={state}
 				keyExtractor={(value) => value.title}
@@ -26,7 +25,7 @@ export default function IndexScreens({ navigation }) {
 						<View style={style.row}>
 							<Text style={style.title}>{item.title}</Text>
 							<TouchableOpacity onPress={() => deleteBlog(item.id)}>
-								<Feather name='trash' size={26} color='black' />
+								<Feather name='trash' size={22} color='black' />
 							</TouchableOpacity>
 						</View>
 					</TouchableOpacity>
@@ -43,8 +42,7 @@ const style = StyleSheet.create({
 		paddingVertical: 10,
 		borderBottomColor: 'gray',
 		borderBottomWidth: 1,
-		paddingRight: 10,
-		paddingLeft: 10,
+		padding: 10,
 		// flex: 1,
 	},
 	title: {

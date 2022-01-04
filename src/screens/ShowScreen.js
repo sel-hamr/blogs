@@ -8,6 +8,7 @@ export default function ShowScreen({ navigation, route }) {
 	return (
 		<View>
 			<Text>{res.title}</Text>
+			<Text>{res.content}</Text>
 		</View>
 	);
 }
