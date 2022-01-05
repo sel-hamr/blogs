@@ -5,6 +5,7 @@ import { Provider } from './src/context/BlogContext';
 import IndexScreens from './src/screens/IndexScreens';
 import ShowScreen from './src/screens/ShowScreen';
 import CreateScreen from './src/screens/CreateScreen';
+import EditScreen from './src/screens/EditScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ function MyStack() {
 			<Stack.Screen name='Home' component={IndexScreens} options={{ title: 'Home' }} />
 			<Stack.Screen name='Details' component={ShowScreen} />
 			<Stack.Screen name='Create' component={CreateScreen} />
+			<Stack.Screen name='Edit' component={EditScreen} />
 		</Stack.Navigator>
 	);
 }
